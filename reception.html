@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注文内容確認</title>
+    <link rel="stylesheet" href="reception.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>注文内容確認</h1>
+        </header>
+
+        <main class="order-list" id="order-summary"></main>
+
+        <footer class="summary-footer">
+            <div class="summary-info">
+                <p>総本数: <span id="total-pieces">0</span> 本</p>
+                <p>総額: <span id="total-price">¥0</span></p>
+                <p>受け取り時間: <span id="pickup-time"></span></p>
+            </div>
+            <button id="confirm-order">注文を確定する</button>
+        </footer>
+
+        <script src="reception.js"></script>
+    </div>
+</body>
+</html>
