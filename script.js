@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const setNumber = document.getElementById("set-number").value;
         const setQuantity = parseInt(document.getElementById("set-quantity").value) || 1;
         const pieces = setNumber * setQuantity;
-        const setAmount = pieces * 100;
+        let setAmount = 0;
+        if(setNumber == 2){
+            setAmount = pieces * 150;
+        }else if(setNumber == 5){
+            setAmount = pieces * 100;
+        }
 
         sessionStorage.setItem('setNumber', setNumber);
         sessionStorage.setItem('setQuantity', setQuantity);
@@ -15,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (pieces <= 20) {
             window.location.href = "select.html";
         } else {
-            alert("注文できるのは20本までです。");
+            return
         }
     });
 });

@@ -16,6 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
         sessionStorage.setItem('tukuneTare', tukuneTare);
         sessionStorage.setItem('pickupTime', pickupTime);
 
+        const pieces = momoTare + momoShio + negimaTare + negimaShio + tukuneTare;
+        const storedPieces = parseInt(sessionStorage.getItem('pieces')) || 0;
+        const errorMessage = document.getElementById("error-message");
+
+        if (pieces !== storedPieces) {
+            errorMessage.innerText = "注文の合計数が正しくありません。もう一度入力してください。";
+            return;
+        }
+
         window.location.href = "reception.html";
     });
 });
